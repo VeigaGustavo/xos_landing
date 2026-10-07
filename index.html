@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XOS — Aprenda. Lembre. Evolua.</title>
+  <meta name="description" content="XOS é o sistema operacional pessoal de estudos: transforma um objetivo de aprendizagem em uma rotina executável e mensurável." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="blob blob--pink"></span>
+    <span class="blob blob--blue"></span>
+    <span class="blob blob--soft"></span>
+  </div>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="brand">
+        <img src="assets/xos-mark.png" alt="" width="32" height="32" />
+        <span>XOS</span>
+      </a>
+      <nav class="nav__links" aria-label="Seções">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#modulos">Módulos</a>
+        <a href="#metodo">Método 15 + 1</a>
+        <a href="#professores">Professores</a>
+      </nav>
+      <a href="#comecar" class="btn btn--primary btn--sm">Começar</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <span class="eyebrow">Sistema operacional pessoal de estudos</span>
+          <h1>Aprenda.<br />Lembre.<br /><span class="grad">Evolua.</span></h1>
+          <p class="lead">
+            O XOS transforma um objetivo de aprendizagem em uma
+            <strong>rotina executável e mensurável</strong> — do planejamento à revisão,
+            com progresso visível a cada dia.
+          </p>
+          <div class="hero__cta">
+            <a href="#comecar" class="btn btn--primary">Começar a estudar</a>
+            <a href="#como-funciona" class="btn btn--secondary">Ver como funciona</a>
+          </div>
+          <ul class="hero__chips">
+            <li>Cronogramas flexíveis</li>
+            <li>Flashcards</li>
+            <li>Pomodoro</li>
+            <li>Método 15 + 1</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="phone glass">
+            <div class="phone__top">
+              <div>
+                <small class="muted">Olá, Ana</small>
+                <strong>Seu dia de estudos</strong>
+              </div>
+              <span class="streak">🔥 12</span>
+            </div>
+
+            <p class="label">Hoje</p>
+            <div class="task glass">
+              <span class="dot dot--pink"></span>
+              <div><strong>Matemática</strong><small>Função quadrática · 45 min</small></div>
+              <span class="pill">Agora</span>
+            </div>
+            <div class="task glass">
+              <span class="dot dot--blue"></span>
+              <div><strong>Python</strong><small>Funções · 30 min</small></div>
+              <span class="check">✓</span>
+            </div>
+            <div class="task glass">
+              <span class="dot dot--soft"></span>
+              <div><strong>Flashcards</strong><small>18 cards</small></div>
+              <span class="check">✓</span>
+            </div>
+
+            <p class="label">Desafio</p>
+            <div class="challenge glass">
+              <div class="challenge__row"><strong>Aprender Python</strong><span>72%</span></div>
+              <div class="bar"><span style="--w: 72%"></span></div>
+              <small class="muted">54 / 90 dias · 32 / 40 tópicos</small>
+            </div>
+          </div>
+          <img class="hero__mascot" src="assets/xos-mark.png" alt="Mascote do XOS" width="180" height="180" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="section">
+      <div class="container narrow center reveal">
+        <span class="eyebrow">Por que o XOS existe</span>
+        <h2>Não é mais um app de agenda, tarefas ou flashcards.</h2>
+        <p class="lead">
+          Ferramentas soltas organizam pedaços. O XOS conecta conteúdo, planejamento,
+          rotina, sessões, revisão e progresso em um único ciclo — para que você saiba,
+          a qualquer momento, responder:
+        </p>
+      </div>
+      <div class="container">
+        <ol class="questions reveal">
+          <li>O que preciso aprender?</li>
+          <li>Como vou estudar?</li>
+          <li>Quando vou estudar?</li>
+          <li><strong>O que devo fazer hoje?</strong></li>
+          <li>O que já aprendi?</li>
+          <li>O que preciso revisar?</li>
+          <li>Estou mantendo consistência?</li>
+          <li>Estou realmente compreendendo?</li>
+          <li>Quanto falta para o meu objetivo?</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- OBJETIVO / CRONOGRAMA / CALENDÁRIO -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">O conceito</span>
+          <h2>Três perguntas, três camadas.</h2>
+          <p class="muted">Separar o <em>onde</em>, o <em>como</em> e o <em>quando</em> é o que torna o plano executável.</p>
+        </div>
+        <div class="trio">
+          <article class="card glass reveal">
+            <span class="card__tag tag--pink">Objetivo</span>
+            <h3>Onde quero chegar?</h3>
+            <pre>Aprender Python em 90 dias.</pre>
+          </article>
+          <article class="card glass reveal">
+            <span class="card__tag tag--blue">Cronograma</span>
+            <h3>Como vou chegar lá?</h3>
+            <pre>Semana 1 — Fundamentos
+Semana 2 — Estruturas de dados
+Semana 3 — Funções
+Semana 4 — Orientação a objetos</pre>
+          </article>
+          <article class="card glass reveal">
+            <span class="card__tag tag--soft">Calendário</span>
+            <h3>Quando cada coisa acontece?</h3>
+            <pre>Seg — Python · 45 min
+Qua — Python · 45 min
+Sex — Python · 45 min
+Dom — Revisão · 30 min</pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLUXO -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">O ciclo de aprendizagem</span>
+          <h2>Nenhum recurso existe isolado.</h2>
+          <p class="muted">Cada etapa alimenta a próxima — do objetivo até o foguinho de amanhã.</p>
+        </div>
+        <ol class="flow reveal">
+          <li>Objetivo</li><li>Desafio</li><li>Cronograma</li><li>Calendário</li>
+          <li>Sessão</li><li>Pomodoro</li><li>Conteúdo</li><li>Exercício / Flashcard</li>
+          <li class="flow--hl">15 + 1</li><li>Avaliação</li><li>Revisão</li><li>Progresso</li>
+          <li>Frequência</li><li class="flow--hl">🔥 Foguinho</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- MÓDULOS -->
+    <section class="section" id="modulos">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Módulos</span>
+          <h2>Tudo o que um estudante precisa, conectado.</h2>
+        </div>
+        <div class="modules">
+          <article class="card glass reveal">
+            <div class="icon icon--pink">📚</div>
+            <h3>Conteúdo</h3>
+            <p class="muted">Matérias, tópicos, materiais (PDF, vídeo, links, anotações), exercícios e flashcards organizados em árvore.</p>
+          </article>
+          <article class="card glass reveal">
+            <div class="icon icon--blue">🗓️</div>
+            <h3>Planejamento</h3>
+            <p class="muted">Calendário, cronogramas por dia, semana, ciclo ou prova, e desafios com prazo e meta.</p>
+          </article>
+          <article class="card glass reveal">
+            <div class="icon icon--pink">⏱️</div>
+            <h3>Estudo</h3>
+            <p class="muted">Sessões com objetivo claro, Pomodoro integrado e o Método 15 + 1 para provar que aprendeu.</p>
+          </article>
+          <article class="card glass reveal">
+            <div class="icon icon--blue">📈</div>
+            <h3>Acompanhamento</h3>
+            <p class="muted">Progresso por matéria, tópico e desafio, histórico diário, frequência e sequência de estudos.</p>
+          </article>
+        </div>
+
+        <div class="schedules reveal">
+          <p class="label">Organize do seu jeito</p>
+          <ul>
+            <li>Por dia</li><li>Por semana</li><li>Por ciclo</li><li>Por prazo</li>
+            <li>Por prova</li><li>Por desafio</li><li>Por objetivo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO 15 + 1 -->
+    <section class="section" id="metodo">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Metodologia XOS</span>
+          <h2>Método <span class="grad">15 + 1</span></h2>
+          <p class="lead">15 minutos de estudo. 1 minuto explicando, sem olhar o material.</p>
+          <p class="muted">
+            Reconhecer um conteúdo não é o mesmo que saber. O 15 + 1 verifica se você consegue
+            <strong>recuperar e explicar</strong> o conhecimento — por escrito, por áudio,
+            respondendo perguntas ou falando livremente. O resultado ajusta o nível de domínio do tópico.
+          </p>
+          <div class="rating">
+            <span><i class="r r--g"></i>Consegui explicar</span>
+            <span><i class="r r--y"></i>Expliquei parcialmente</span>
+            <span><i class="r r--r"></i>Não consegui explicar</span>
+          </div>
+        </div>
+        <ol class="steps glass reveal">
+          <li><b>1</b>Escolher tópico</li>
+          <li><b>2</b>Estudar por 15 minutos</li>
+          <li><b>3</b>Encerrar o material</li>
+          <li><b>4</b>Explicar por 1 minuto</li>
+          <li><b>5</b>Avaliar a compreensão</li>
+          <li><b>6</b>Registrar o resultado</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FREQUÊNCIA -->
+    <section class="section">
+      <div class="container split split--rev">
+        <div class="streak-card glass reveal">
+          <div class="streak-card__head">
+            <strong>Outubro</strong>
+            <span class="streak">🔥 12 dias</span>
+          </div>
+          <div class="cal" id="cal" aria-label="Exemplo de frequência mensal"></div>
+          <div class="stats">
+            <div><b>18</b><small>dias estudados</small></div>
+            <div><b>14h32</b><small>estudadas</small></div>
+            <div><b>183</b><small>flashcards</small></div>
+            <div><b>24</b><small>explicações</small></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Frequência e foguinho</span>
+          <h2>Estudar é uma atividade treinável.</h2>
+          <p class="lead">Como um app de academia — só que para o aprendizado.</p>
+          <p class="muted">
+            A frequência marca os dias em que você <strong>realmente estudou</strong>, não os dias em que abriu o app.
+            O foguinho mostra sua sequência e incentiva consistência sem punição excessiva.
+            O histórico vira um diário de treino intelectual, e o progresso nunca é reduzido a uma única porcentagem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSORES -->
+    <section class="section" id="professores">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Para professores</span>
+          <h2>Monte a experiência. Acompanhe a evolução.</h2>
+          <p class="muted">
+            Crie matérias, tópicos, materiais, exercícios, flashcards, cronogramas e desafios —
+            e entregue tudo estruturado para a turma. O aluno só precisa executar.
+          </p>
+          <ul class="checks">
+            <li>Progresso e frequência de cada aluno</li>
+            <li>Tópicos concluídos e dificuldades</li>
+            <li>Atividades e desempenho em um só lugar</li>
+          </ul>
+        </div>
+        <div class="tree glass reveal">
+<pre><span class="t-pink">Matemática</span>
+└── Função Quadrática
+    ├── <span class="t-blue">Materiais</span>   PDF · Vídeo · Anotação
+    ├── <span class="t-blue">Atividades</span>  10 exercícios · 10 flashcards
+    ├── <span class="t-blue">Metodologia</span> 15 + 1
+    ├── <span class="t-blue">Cronograma</span>  Semanas 1 – 3
+    └── <span class="t-pink">Desafio</span>     Dominar funções em 21 dias</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESSÊNCIA -->
+    <section class="section">
+      <div class="container narrow center">
+        <span class="eyebrow reveal">A essência</span>
+        <ol class="essence reveal">
+          <li>“Preciso aprender isso.”</li>
+          <li>“Este é meu objetivo.”</li>
+          <li>“Este é meu cronograma.”</li>
+          <li>“Isto é o que preciso fazer hoje.”</li>
+          <li>“Estudei.”</li>
+          <li>“Agora prove que aprendeu.”</li>
+          <li>“Revise o que ainda não domina.”</li>
+          <li>“Continue amanhã.”</li>
+          <li class="grad">“Veja o quanto evoluiu.”</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="comecar">
+      <div class="container">
+        <div class="cta glass reveal">
+          <img src="assets/xos-mark.png" alt="" width="96" height="96" />
+          <h2>Comece seu primeiro desafio.</h2>
+          <p class="muted">Defina um objetivo e deixe o XOS transformar em rotina.</p>
+          <a href="#" class="btn btn--primary">Criar minha conta</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="brand">
+        <img src="assets/xos-mark.png" alt="" width="24" height="24" />
+        <span>XOS</span>
+      </a>
+      <small class="muted">Aprenda. Lembre. Evolua. · © 2026</small>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

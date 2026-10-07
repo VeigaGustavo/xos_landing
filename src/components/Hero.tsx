@@ -87,7 +87,7 @@ export function Hero() {
             <span className="line"><span className="grad grad--shine" style={{ animationDelay: '320ms' }}>Evolua.</span></span>
           </h1>
           <p className="lead intro" style={{ animationDelay: '460ms' }}>
-            O XOS é um <strong>sistema operacional pessoal de estudos</strong>: transforma um objetivo de
+            O XOS é um <strong>app pessoal de estudos</strong>: transforma um objetivo de
             aprendizagem em uma rotina executável e mensurável, do planejamento à revisão, com IA e progresso
             visível a cada dia.
           </p>

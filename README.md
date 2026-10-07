@@ -1,6 +1,6 @@
 # XOS — Landing page
 
-Landing page do XOS, o sistema operacional pessoal de estudos. O app está em desenvolvimento e aberto a testers.
+Landing page do XOS, o app pessoal de estudos. O app está em desenvolvimento e aberto a testers.
 
 Feita com React + TypeScript + Vite.
 

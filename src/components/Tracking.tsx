@@ -1,3 +1,6 @@
+import { useInView } from '../hooks/useInView.ts'
+import { CountUp } from './CountUp.tsx'
+import { Icon, type IconName } from './Icon.tsx'
 import { Reveal } from './Reveal.tsx'
 
 // Outubro de exemplo: começa numa quinta (3 casas vazias), "hoje" é dia 22
@@ -16,46 +19,83 @@ function dayClass(d: number) {
   return cls.join(' ')
 }
 
+const formatTime = (min: number) => `${Math.floor(min / 60)}h${String(min % 60).padStart(2, '0')}`
+
 const stats = [
-  { value: '18', label: 'dias estudados' },
-  { value: '14h32', label: 'estudadas' },
-  { value: '183', label: 'flashcards' },
-  { value: '24', label: 'explicações' },
+  { to: 18, label: 'dias estudados' },
+  { to: 872, label: 'estudadas', format: formatTime },
+  { to: 183, label: 'flashcards' },
+  { to: 24, label: 'explicações' },
 ]
 
-const history = [
-  { date: '06 OUT', subject: 'Matemática', lines: ['⏱️ 45 min', '🧠 3 tópicos', '🃏 12 flashcards', '✍️ 8 exercícios', '🎤 1 explicação'] },
-  { date: '05 OUT', subject: 'Python', lines: ['⏱️ 1h10', '🧠 Funções', '🃏 20 flashcards', '🔥 Sequência mantida'] },
+const history: { date: string; subject: string; lines: { icon: IconName; text: string }[] }[] = [
+  {
+    date: '06 OUT',
+    subject: 'Matemática',
+    lines: [
+      { icon: 'clock', text: '45 min' },
+      { icon: 'book', text: '3 tópicos' },
+      { icon: 'layers', text: '12 flashcards' },
+      { icon: 'pen', text: '8 exercícios' },
+      { icon: 'mic', text: '1 explicação' },
+    ],
+  },
+  {
+    date: '05 OUT',
+    subject: 'Filosofia',
+    lines: [
+      { icon: 'clock', text: '1h10' },
+      { icon: 'book', text: 'Ética e moral' },
+      { icon: 'layers', text: '20 flashcards' },
+      { icon: 'flame', text: 'Sequência mantida' },
+    ],
+  },
 ]
 
 export function Frequency() {
+  const { ref, inView } = useInView<HTMLDivElement>()
+
   return (
     <section className="section" id="frequencia">
       <div className="container split split--rev">
         <Reveal className="streak-card glass">
           <div className="streak-card__head">
             <strong>Outubro</strong>
-            <span className="streak">🔥 12 dias</span>
+            <span className="streak">
+              <Icon name="flame" size={16} className="flicker" />
+              <CountUp to={12} /> dias
+            </span>
           </div>
-          <div className="cal" aria-label="Exemplo de frequência mensal">
+          <div ref={ref} className={`cal ${inView ? 'in' : ''}`} aria-label="Exemplo de frequência mensal">
             {Array.from({ length: OFFSET }, (_, i) => (
               <i key={`e${i}`} />
             ))}
             {Array.from({ length: DAYS }, (_, i) => (
-              <span key={i} className={dayClass(i + 1)}>
+              <span key={i} className={dayClass(i + 1)} style={{ transitionDelay: `${i * 22}ms` }}>
                 {i + 1}
               </span>
             ))}
           </div>
           <div className="legend">
-            <span><i className="lg lg--on" />Estudou</span>
-            <span><i className="lg lg--rest" />Descanso</span>
-            <span><i className="lg" />Sem estudo</span>
+            <span>
+              <i className="lg lg--on" />
+              Estudou
+            </span>
+            <span>
+              <i className="lg lg--rest" />
+              Descanso
+            </span>
+            <span>
+              <i className="lg" />
+              Sem estudo
+            </span>
           </div>
           <div className="stats">
             {stats.map((s) => (
               <div key={s.label}>
-                <b>{s.value}</b>
+                <b>
+                  <CountUp to={s.to} format={s.format} />
+                </b>
                 <small>{s.label}</small>
               </div>
             ))}
@@ -75,22 +115,25 @@ export function Frequency() {
       </div>
 
       <div className="container">
-        <Reveal className="history">
+        <div className="history">
           <p className="label">Histórico: o seu diário de treino intelectual</p>
           <div className="grid grid--2">
-            {history.map((h) => (
-              <div key={h.date} className="history__item glass">
+            {history.map((h, i) => (
+              <Reveal key={h.date} className="history__item glass" delay={i * 120}>
                 <span className="history__date">{h.date}</span>
-                <strong>📚 {h.subject}</strong>
+                <strong>{h.subject}</strong>
                 <ul>
                   {h.lines.map((l) => (
-                    <li key={l}>{l}</li>
+                    <li key={l.text}>
+                      <Icon name={l.icon} size={14} />
+                      {l.text}
+                    </li>
                   ))}
                 </ul>
-              </div>
+              </Reveal>
             ))}
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   )
@@ -115,8 +158,8 @@ export function Teachers() {
         </Reveal>
         <Reveal className="tree glass" delay={120}>
           <pre>
-            <span className="t-pink">Matemática</span>
-            {'\n└── Função Quadrática\n    ├── '}
+            <span className="t-pink">Filosofia</span>
+            {'\n└── Ética\n    ├── '}
             <span className="t-blue">Materiais</span>
             {'   PDF · Vídeo · Anotação\n    ├── '}
             <span className="t-blue">Atividades</span>
@@ -126,7 +169,7 @@ export function Teachers() {
             <span className="t-blue">Cronograma</span>
             {'  Semanas 1 – 3\n    └── '}
             <span className="t-pink">Desafio</span>
-            {'     Dominar funções em 21 dias'}
+            {'     Dominar ética em 21 dias'}
           </pre>
         </Reveal>
       </div>

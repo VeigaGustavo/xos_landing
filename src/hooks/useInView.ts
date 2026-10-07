@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
-export function useInView<T extends Element>(threshold = 0.15) {
+// Dispara uma vez quando o elemento entra na tela. Usa rootMargin em vez de
+// threshold para funcionar também com elementos mais altos que a viewport.
+export function useInView<T extends Element>(rootMargin = '0px 0px -12% 0px') {
   const ref = useRef<T>(null)
   const [inView, setInView] = useState(false)
 
@@ -14,11 +16,11 @@ export function useInView<T extends Element>(threshold = 0.15) {
           io.disconnect()
         }
       },
-      { threshold },
+      { rootMargin },
     )
     io.observe(el)
     return () => io.disconnect()
-  }, [threshold])
+  }, [rootMargin])
 
   return { ref, inView }
 }

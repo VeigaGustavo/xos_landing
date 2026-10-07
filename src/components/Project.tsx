@@ -2,11 +2,10 @@ import { useState } from 'react'
 import mark from '../assets/xos-mark.png'
 import { essence, improvements, roadmap, whatsappLink } from '../data/content.ts'
 import { useInView } from '../hooks/useInView.ts'
+import { Icon } from './Icon.tsx'
 import { Reveal } from './Reveal.tsx'
 import { SectionHead } from './SectionHead.tsx'
 import { WhatsAppIcon } from './WhatsAppIcon.tsx'
-
-const stack = ['Flutter', 'Dart', 'Java', 'Spring Boot', 'Liquid Glass UI']
 
 export function Developer() {
   const [imgOk, setImgOk] = useState(true)
@@ -19,8 +18,8 @@ export function Developer() {
               <img
                 src="https://github.com/VeigaGustavo.png?size=240"
                 alt="Gustavo Veiga"
-                width={120}
-                height={120}
+                width={140}
+                height={140}
                 onError={() => setImgOk(false)}
               />
             ) : (
@@ -31,9 +30,9 @@ export function Developer() {
             <span className="eyebrow">Quem está desenvolvendo</span>
             <h2>Oi, eu sou o Gustavo Veiga.</h2>
             <p className="muted">
-              Sou desenvolvedor e estou construindo o XOS do zero, do aplicativo à API. A ideia nasceu de uma
-              frustração simples: ter vontade de aprender, ter conteúdo de sobra, e mesmo assim não saber o que
-              estudar hoje, nem se estava realmente evoluindo.
+              Sou desenvolvedor e estou construindo o XOS do zero. A ideia nasceu de uma frustração simples: ter
+              vontade de aprender, ter conteúdo de sobra, e mesmo assim não saber o que estudar hoje, nem se
+              estava realmente evoluindo.
             </p>
             <p className="muted">
               Desenvolvi o XOS para <strong>estudantes</strong> que querem parar de depender de motivação e
@@ -41,15 +40,7 @@ export function Developer() {
               conteúdo: um caminho claro para os alunos seguirem. A meta é fazer estudar parecer treino: com
               plano, execução, consistência e evolução visível.
             </p>
-            <ul className="chips">
-              {stack.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
             <div className="dev__links">
-              <a href="https://github.com/VeigaGustavo" target="_blank" rel="noopener noreferrer" className="btn btn--secondary btn--sm">
-                GitHub
-              </a>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn--secondary btn--sm">
                 <WhatsAppIcon size={16} />
                 Falar comigo
@@ -66,13 +57,16 @@ export function Roadmap() {
   return (
     <section className="section" id="roadmap">
       <div className="container">
-        <SectionHead eyebrow="Em desenvolvimento" title="Onde o XOS está, e para onde vai.">
-          O app ainda está sendo construído. Este é o caminho até a primeira versão e além.
+        <SectionHead eyebrow="Fase de testes" title="Onde o XOS está, e para onde vai.">
+          O app já está em teste. A primeira versão básica para testers chega na próxima semana.
         </SectionHead>
         <div className="grid grid--3 roadmap">
           {roadmap.map((r, i) => (
-            <Reveal as="article" key={r.phase} className="card glass" delay={i * 100}>
-              <span className={`tag tag--${r.tone}`}>{r.phase}</span>
+            <Reveal as="article" key={r.phase} className={`card glass roadmap__step ${i === 0 ? 'is-now' : ''}`} delay={i * 120}>
+              <span className={`tag tag--${r.tone}`}>
+                {i === 0 && <span className="status__dot" />}
+                {r.phase}
+              </span>
               <h3>{r.title}</h3>
               <ul className="mini-list">
                 {r.items.map((it) => (
@@ -90,8 +84,10 @@ export function Roadmap() {
         </div>
         <div className="grid grid--4">
           {improvements.map((m, i) => (
-            <Reveal as="article" key={m.title} className="card card--sm glass" delay={i * 80}>
-              <div className="icon icon--blue">{m.icon}</div>
+            <Reveal as="article" key={m.title} className="card card--sm glass" delay={i * 90}>
+              <div className="icon icon--blue">
+                <Icon name={m.icon} />
+              </div>
               <h3>{m.title}</h3>
               <p className="muted">{m.text}</p>
             </Reveal>
@@ -103,7 +99,7 @@ export function Roadmap() {
 }
 
 export function Essence() {
-  const { ref, inView } = useInView<HTMLOListElement>(0.4)
+  const { ref, inView } = useInView<HTMLOListElement>('0px 0px -25% 0px')
   return (
     <section className="section">
       <div className="container narrow center">
@@ -129,15 +125,15 @@ export function Testers() {
     <section className="section" id="testers">
       <div className="container">
         <Reveal className="cta glass">
-          <img src={mark} alt="" width={96} height={96} />
+          <img src={mark} alt="" width={96} height={96} className="cta__mascot" />
           <span className="status">
             <span className="status__dot" />
             Vagas abertas para testers
           </span>
           <h2>Quer testar o XOS antes de todo mundo?</h2>
           <p className="muted">
-            Me chama no WhatsApp. Você recebe acesso às versões de teste, conversa direto comigo e ajuda a
-            decidir o que entra no app.
+            O app está em fase de testes e a primeira versão básica chega na próxima semana. Me chama no WhatsApp:
+            você recebe acesso, conversa direto comigo e ajuda a decidir o que entra no app.
           </p>
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn--whats">
             <WhatsAppIcon size={20} />

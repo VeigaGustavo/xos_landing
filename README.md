@@ -1,11 +1,14 @@
 # XOS — Landing page
 
-Landing page estática explicando o XOS, o sistema operacional pessoal de estudos.
+Landing page do XOS, o sistema operacional pessoal de estudos. O app está em desenvolvimento e aberto a testers.
 
-HTML + CSS + JS puros, sem build. Para ver localmente:
+Feita com React + TypeScript + Vite.
 
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev      # desenvolvimento
+npm run build    # gera dist/
+npm run lint
 ```
 
-e abra http://localhost:8080.
+O conteúdo dos textos fica em `src/data/content.ts` (incluindo o número do WhatsApp).
